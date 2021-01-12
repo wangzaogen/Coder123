@@ -5,11 +5,11 @@
     <h1>Coder123</h1>
     <div class=metanav>
         {% if not session.logged_in %}
-        <a href="{{ url_for('login.login') }}">log in</a>
+        <a href="{{ url_for('login.login_in') }}">log in</a>
         {% else %}
-{#            <a href="{{ url_for('translator_en') }}">translator</a>#}
+            <a href="{{ url_for('fanyi.translator_en') }}">translator</a>
 {#            <a href="{{ url_for('news_page') }}">news</a>#}
-{#            <a href="{{ url_for('logout') }}">log out</a>#}
+            <a href="{{ url_for('login.login_out') }}">log out</a>
         {% endif %}
     </div>
     {% for message in get_flashed_messages() %}

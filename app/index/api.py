@@ -24,4 +24,4 @@ def add_entry():
                  [request.form['title'], request.form['text']])
     g.db.commit()
     flash('New entry was successfully posted')
-    return redirect(url_for('show_entries'))
+    return redirect(url_for('index.show_entries'))

@@ -2,7 +2,7 @@
 {% block body %}
 <h2>Translator</h2>
 {% if error %}<p class=error><strong>Result:</strong> {{ error }}{% endif %}
-<form action="{{ url_for('translator_en') }}" method=post>
+<form action="{{ url_for('fanyi.translator_en') }}" method=post>
     <dl>
         <dt>输入翻译:
         <dd><input type=text name=translator_info>
