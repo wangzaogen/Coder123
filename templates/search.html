@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2>Search</h2>
+{% if error %}<p class=error><strong>Result:</strong> {{ error }}{% endif %}
+<form action="{{ url_for('search.search_info') }}" method=post>
+    <dl>
+        <dt>选择搜索:
+        <select name="search_type">
+        <option value ="bing">bing</option>
+        <option value ="google">google</option>
+        <option value ="baidu">baidu</option>
+        </select>
+        <input type=text name=search_info>
+        <input type=submit value=DO>
+    </dl>
+</form>
+{% endblock %}

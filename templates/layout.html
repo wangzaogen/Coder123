@@ -7,9 +7,10 @@
         {% if not session.logged_in %}
         <a href="{{ url_for('login.login_in') }}">log in</a>
         {% else %}
+            <a href="{{ url_for('search.search_info') }}">search</a>
             <a href="{{ url_for('fanyi.translator_en') }}">translator</a>
 {#            <a href="{{ url_for('news_page') }}">news</a>#}
-            <a href="{{ url_for('login.login_out') }}">log out</a>
+            <a href="{{ url_for('login.login_out') }}">out</a>
         {% endif %}
     </div>
     {% for message in get_flashed_messages() %}
