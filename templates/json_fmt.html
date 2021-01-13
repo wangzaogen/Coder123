@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2>To Json</h2>
+
+{% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+{% if result %}<p class=error><strong>Result:</strong>
+<div>
+    <dd><textarea name=str rows=5 cols=40 value="{{ result }}">{{ result }}</textarea>
+</div>
+{% endif %}
+<form action="{{ url_for('index.to_json') }}" method=post>
+    <dl>
+        <dt>格式化Json:
+        <dd><textarea name=json_str rows=5 cols=40></textarea>
+        <dd><input type=submit value=Do>
+    </dl>
+</form>
+{% endblock %}
