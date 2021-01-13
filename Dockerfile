@@ -1,6 +1,6 @@
 FROM python:3.6
-WORKDIR /app
-COPY . /app
-RUN pip install -r requirements.txt
-EXPOSE 5000
-CMD ["python3 Coder123.py"]
+WORKDIR /Project/demo
+COPY requirements.txt ./
+RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+COPY . .
+CMD ["gunicorn", "start:app", "-c", "./gunicorn.conf.py"]
