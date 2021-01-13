@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2>Calculator</h2>
+{% if result %}<p class=error><strong>Result:</strong> {{ result }}{% endif %}
+<form action="{{ url_for('calc.calc_info') }}" method=post>
+    <dl>
+        <dt>输入表达式:
+        <dd><input type=text name=expression>
+        <dd><input type=submit value=DO>
+    </dl>
+</form>
+{% endblock %}
